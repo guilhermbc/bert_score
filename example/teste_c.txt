@@ -1,0 +1,65 @@
+**Narrativa de Domínio - Versão 1.0**
+
+**1. Introdução e Contexto**
+A loja de informática, representada por Guilherme, necessita de um sistema para otimizar suas operações diárias. O principal objetivo é auxiliar no processo de vendas, bem como no registro e gerenciamento de clientes e funcionários. A loja atende tanto pessoas físicas quanto pessoas jurídicas, vendendo produtos de informática para ambos os tipos de clientes.
+
+**2. Entidades e Papéis Principais**
+
+*   **Clientes:** Podem ser pessoas físicas ou jurídicas. São os compradores dos produtos da loja.
+*   **Produtos:** Itens comercializados pela loja de informática.
+*   **Vendas:** Transações de comercialização de produtos para clientes.
+*   **Pagamentos:** Registro das formas e valores recebidos pelas vendas.
+*   **Funcionários:**
+    *   **Gerente:** É o único responsável pelo registro de novos funcionários. Possui a capacidade de consultar vendas por período, acompanhar metas e visualizar o desempenho geral da loja.
+    *   **Vendedor:** Atende os clientes, auxilia na escolha dos produtos e é elegível para receber comissão sobre suas vendas.
+    *   **Caixa:** Responsável por registrar as vendas no sistema e processar os pagamentos dos clientes.
+
+**3. Processos de Negócio**
+
+*   **Processo de Venda:**
+    1.  Clientes visitam a loja.
+    2.  Vendedores atendem os clientes, auxiliando na escolha dos produtos.
+    3.  Após a escolha, os clientes se dirigem ao caixa.
+    4.  O caixa registra a venda no sistema.
+    5.  O cliente efetua o pagamento.
+    6.  O pagamento é registrado no sistema.
+
+*   **Registro de Funcionários:**
+    1.  Apenas o Gerente tem permissão para registrar novos funcionários no sistema.
+    2.  Os tipos de funcionários que podem ser registrados são: Gerente, Vendedor e Caixa.
+
+*   **Consulta e Acompanhamento de Vendas (Gerente):**
+    1.  O Gerente pode selecionar um período específico para consultar as vendas.
+    2.  O sistema deve exibir o valor total vendido no período, o valor vendido por dia e a meta esperada para o período.
+    3.  A visualização do desempenho da meta deve ser clara: se a meta for superada, o valor deve ser exibido em azul; caso contrário, em vermelho.
+
+*   **Cálculo de Comissão de Vendedores:**
+    1.  A comissão dos vendedores é calculada com base em 10% do valor total das vendas realizadas por eles.
+
+**4. Regras de Negócio**
+
+*   **Integridade da Venda:** Uma vez que uma venda é registrada, ela não pode ser alterada nem excluída.
+*   **Controle de Estoque:** A quantidade de produtos em estoque deve ser automaticamente decrementada no momento em que uma venda é registrada.
+*   **Formas de Pagamento:**
+    *   A loja aceita pagamentos em Débito, Pix e Crédito.
+    *   Pagamentos em Crédito podem ser parcelados em até 5 vezes.
+    *   O valor mínimo de cada parcela no Crédito é de R$ 100,00.
+*   **Flexibilidade de Pagamento:** Um pagamento pode ser associado a mais de uma venda (ou seja, um único registro de pagamento pode cobrir múltiplas vendas).
+
+**5. Funcionalidades Esperadas do Sistema**
+
+O sistema deve permitir:
+*   Registrar e gerenciar informações de clientes (pessoas físicas e jurídicas).
+*   Registrar e gerenciar informações de funcionários (Gerente, Vendedor, Caixa).
+*   Registrar vendas, associando produtos, clientes e vendedores.
+*   Processar e registrar pagamentos, considerando as diferentes formas (Débito, Pix, Crédito parcelado).
+*   Gerenciar o estoque de produtos, decrementando automaticamente após as vendas.
+*   Calcular e registrar a comissão dos vendedores.
+*   Permitir que o Gerente consulte vendas por período, incluindo valor total, valor diário e comparação com metas, com indicadores visuais (azul/vermelho).
+
+**6. Requisitos Não Funcionais**
+
+*   **Usabilidade:** O sistema deve ser intuitivo e facilitar as operações diárias da loja, contribuindo para a agilidade no atendimento e gestão.
+*   **Integridade de Dados:** Garantir que as vendas registradas não possam ser alteradas ou excluídas, mantendo a consistência e a confiabilidade dos dados.
+*   **Segurança:** Apenas usuários autorizados (Gerente) devem ter permissão para registrar funcionários, protegendo o acesso a funções críticas.
+*   **Visualização:** A interface para o Gerente deve apresentar as informações de metas de forma clara e visualmente distinta (cores azul/vermelho) para facilitar a tomada de decisão.

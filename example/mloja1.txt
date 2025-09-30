@@ -1,0 +1,78 @@
+**Narrativa de Domínio: Sistema de Gestão para Loja de Informática**
+
+**1. Introdução e Contexto**
+Uma loja de informática, que comercializa produtos para uma variedade de clientes (tanto pessoas físicas quanto jurídicas), busca implementar um sistema de gestão. O objetivo principal é otimizar e auxiliar nas operações diárias, especificamente no registro de vendas, gerenciamento de clientes e controle de funcionários. Este sistema é visto como uma ferramenta essencial para facilitar o dia a dia da loja.
+
+**2. Objetivo do Sistema**
+O sistema tem como propósito central registrar e gerenciar as vendas, os clientes e os funcionários da loja, fornecendo suporte para o processo de vendas, o acompanhamento de desempenho e a tomada de decisões gerenciais.
+
+**3. Usuários e Papéis**
+O sistema será utilizado por diferentes perfis de usuários, cada um com responsabilidades e permissões específicas:
+
+*   **Clientes:** Pessoas físicas ou jurídicas que adquirem produtos. Seus dados são registrados no sistema para fins de venda e histórico.
+*   **Vendedores:** Atendem os clientes na loja e são parte fundamental do processo de venda. Sua performance é monitorada para o cálculo de comissões.
+*   **Caixa:** Responsável por finalizar o processo de venda, registrando os produtos e processando os pagamentos no sistema.
+*   **Gerente:** Possui um papel de supervisão e gestão. É o único responsável por registrar novos funcionários, consultar relatórios detalhados de vendas, acompanhar o cumprimento de metas e calcular as comissões dos vendedores.
+
+**4. Processos de Negócio Principais**
+
+**4.1. Processo de Venda**
+1.  Um cliente visita a loja e é atendido por um vendedor.
+2.  Após escolher os produtos desejados, o cliente se dirige ao caixa.
+3.  O caixa registra a venda no sistema, incluindo os produtos e quantidades.
+4.  O cliente efetua o pagamento, que é devidamente registrado pelo caixa.
+
+**4.2. Gerenciamento de Funcionários**
+Apenas o Gerente tem a autoridade para registrar novos funcionários no sistema. Os tipos de funcionários que podem ser cadastrados são: Gerente, Vendedor e Caixa.
+
+**4.3. Gerenciamento de Vendas e Metas**
+O Gerente necessita de uma funcionalidade para consultar as vendas realizadas em um período específico de sua escolha. Esta consulta deve apresentar:
+*   O valor total vendido por dia dentro do período selecionado.
+*   O valor total acumulado de vendas para todo o período.
+*   Uma comparação entre o valor total vendido e a meta esperada para o período.
+*   Um indicador visual: se a meta for superada, o valor deve ser exibido em azul; se a meta não for atingida, o valor deve ser exibido em vermelho.
+
+**4.4. Cálculo de Comissão de Vendedores**
+A comissão dos vendedores é um componente importante da remuneração e é calculada como 10% do valor total das vendas que cada vendedor realizou. O sistema deve fornecer as informações necessárias para que o gerente possa calcular essas comissões.
+
+**5. Funcionalidades Esperadas do Sistema**
+
+*   **Registro de Vendas:**
+    *   Permitir o registro detalhado de cada venda, incluindo os produtos, suas quantidades e o vendedor responsável.
+    *   Uma vez registrada, a venda não poderá ser alterada ou excluída.
+*   **Registro de Clientes:**
+    *   Cadastrar clientes, com a capacidade de diferenciar entre Pessoas Físicas e Pessoas Jurídicas.
+*   **Registro de Funcionários:**
+    *   Funcionalidade exclusiva para o Gerente cadastrar novos funcionários (Gerente, Vendedor, Caixa).
+*   **Gerenciamento de Produtos:**
+    *   Automaticamente decrementar a quantidade de produtos em estoque no momento em que uma venda é registrada.
+*   **Processamento de Pagamentos:**
+    *   Registrar pagamentos efetuados nas modalidades: Débito, PIX e Crédito.
+    *   Para pagamentos em Crédito, permitir o parcelamento em até 5 vezes.
+    *   Impor uma condição de valor mínimo de R$ 100,00 para cada parcela de crédito.
+    *   Possibilitar que um único registro de pagamento seja associado a mais de uma venda.
+*   **Consultas e Relatórios Gerenciais:**
+    *   Permitir ao Gerente consultar vendas por período, exibindo o valor total diário e o total do período.
+    *   Exibir a meta de vendas esperada para o período consultado.
+    *   Apresentar visualmente (cores azul/vermelho) o status de atingimento da meta.
+
+**6. Regras de Negócio e Restrições**
+
+*   Vendas registradas são imutáveis; não podem ser alteradas ou excluídas.
+*   A quantidade de produtos em estoque deve ser automaticamente atualizada (decrementada) após cada venda.
+*   Pagamentos em crédito podem ser parcelados em no máximo 5 vezes.
+*   O valor mínimo para cada parcela de crédito é de R$ 100,00.
+*   Um pagamento pode ser vinculado a uma ou mais vendas.
+*   Apenas o Gerente possui permissão para registrar novos funcionários.
+*   A comissão dos vendedores é calculada em 10% sobre o valor total das vendas que eles realizaram.
+
+**7. Aspectos Não Funcionais**
+
+*   **Usabilidade:** O sistema deve ser intuitivo e fácil de usar, visando facilitar as operações diárias e reduzir a curva de aprendizado.
+*   **Performance:** As operações de registro de vendas e consultas devem ser rápidas e eficientes para não impactar o fluxo de trabalho.
+*   **Segurança:** O acesso a funcionalidades sensíveis, como o registro de funcionários e relatórios gerenciais, deve ser restrito aos usuários com os papéis apropriados.
+*   **Visualização:** A apresentação de dados, especialmente nos relatórios de metas, deve ser clara e utilizar indicadores visuais (cores) para facilitar a rápida compreensão.
+
+---
+
+Gerado por RequirementsAI versão 0.8.2

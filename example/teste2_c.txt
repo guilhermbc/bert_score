@@ -1,0 +1,42 @@
+Minimundo – Loja de Informática
+
+Uma loja especializada em produtos de informática atende clientes que podem ser pessoas físicas ou pessoas jurídicas.
+Ela necessita de um sistema para apoiar suas atividades de vendas e gestão interna.
+
+Cadastro de clientes é feito pelos vendedores:
+
+Para clientes pessoa física, devem ser registrados: nome completo, data de nascimento, CPF, RG, endereço, celular, telefone fixo (quando houver) e e-mail (quando houver).
+
+Para clientes pessoa jurídica, devem ser registrados: razão social, nome fantasia, CNPJ, endereço, telefone fixo (quando houver), nome de um responsável para contato, celular e e-mail.
+
+Cada cliente pode realizar compras na loja.
+As vendas são registradas pelos vendedores.
+De cada venda é necessário guardar: o cliente, os produtos adquiridos, a quantidade de cada produto, o valor unitário, o valor total da venda, a data da venda e o vendedor responsável.
+Essas informações são definitivas: após o registro, não podem ser alteradas nem excluídas.
+
+A loja possui funcionários, cadastrados pelo gerente.
+De cada funcionário devem ser registrados: nome, matrícula, data de nascimento, CPF, RG, endereço, celular, telefone fixo (quando houver), e-mail, data de admissão e função (gerente, vendedor ou caixa).
+
+O caixa é responsável por registrar os pagamentos das vendas.
+Pagamentos podem ser realizados via cartão de débito, cartão de crédito ou pix.
+No caso do cartão de crédito, o cliente pode parcelar em até 6 vezes, desde que cada parcela tenha valor mínimo de 80 reais.
+Um mesmo pagamento pode quitar mais de uma venda.
+Pagamentos, uma vez registrados, não podem ser excluídos.
+
+A loja também mantém um cadastro de produtos.
+Cada produto deve ter código, nome, descrição, preço e quantidade disponível em estoque.
+Ao efetuar uma venda, o sistema deve automaticamente reduzir a quantidade em estoque de acordo com os itens vendidos.
+
+O gerente pode consultar as vendas realizadas em determinado período, informando data de início e fim.
+O sistema retorna:
+
+o total de vendas por dia dentro do período,
+
+o total acumulado de vendas no período,
+
+a meta estabelecida para o período.
+
+Se o total de vendas atingir ou superar a meta, o sistema deve exibir o valor em azul; caso contrário, em vermelho.
+
+Mensalmente, o gerente também consulta o total de comissões dos vendedores.
+Cada vendedor recebe 8% sobre o valor total das vendas realizadas no mês. O sistema deve exibir o nome de cada vendedor e o valor de sua comissão referente ao mês selecionado.

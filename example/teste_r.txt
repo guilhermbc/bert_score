@@ -1,0 +1,21 @@
+Uma loja que vende produtos de informática atende clientes pessoas físicas e jurídicas. 
+Ela precisa de um sistema para apoiar suas atividades de atendimento aos clientes. 
+Vendedores registram clientes. 
+De clientes do tipo pessoa física a empresa precisa registrar nome, data de nascimento, RG, CPF, endereço, telefone fixo (quando houver), celular e e-mail (quando houver). 
+De clientes do tipo pessoa jurídica a empresa precisa registrar nome (nome fantasia), razão social, CNPJ, endereço, telefone fixo (quando houver), nome de uma pessoa para contato, celular e e-mail.  
+Clientes dirigem-se à loja para realizar compras. 
+As vendas são registradas por vendedores. 
+De cada venda é necessário saber o cliente, os produtos vendidos, a quantidade vendida de cada um desses produtos, o valor de cada produto, o valor total da venda e a data da venda. 
+De cada venda também é necessário saber o vendedor, para que seja possível calcular as comissões mensais de cada vendedor. 
+Uma vez que a venda seja registrada, os seus dados não podem ser alterados e a venda não pode ser excluída. 
+Os funcionários da loja são registrados pelo gerente, que precisa registrar nome, matrícula, data de nascimento, RG, CPF, endereço, telefone fixo (se houver), celular, e-mail, data de admissão e função (gerente, vendedor ou caixa). 
+O caixa da loja faz o registro do pagamento das vendas pelos clientes. 
+As vendas podem ser pagas em cartão de débito, cartão de crédito ou pix. 
+Quando pagas em cartão de crédito, podem ser divididas em até 5 parcelas desde que o valor mínimo da parcela seja de 100 reais.  
+Um mesmo pagamento pode ser realizado para mais de uma venda. 
+Pagamentos realizados não podem ser excluídos. Vendedores fazem o registro dos produtos da loja. 
+De cada produto é necessário registrar seu código, nome, descrição, preço e quantidade em estoque. 
+Quando uma venda é realizada, o estoque dos produtos vendidos deve ser diminuído automaticamente. 
+O gerente consulta as vendas realizadas por período informando a data de início e de fim para verificar o atendimento às metas estabelecidas pelo proprietário. 
+Na consulta são retornados o valor total de vendas para cada dia do período consultado, o valor total de vendas para o referido período e o valor da meta estabelecida para o referido período. Se o total de vendas for igual ou superior à meta, o valor deve ser apresentado em azul. Se for menor, deve ser apresentado em vermelho.  Além disso, mensalmente, o gerente consulta o valor das comissões a serem pagas a todos os vendedores. Para isso ele indica o mês de referência e são apresentados para ele o nome de cada vendedor e o total de comissão que deve ser pago a ele para o referido mês. 
+O valor é definido calculando-se 10% sobre o valor total vendido pelo vendedor no referido mês.

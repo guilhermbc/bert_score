@@ -1,0 +1,65 @@
+**Narrativa de Domínio: Sistema de Gestão para Loja de Informática**
+
+**1. Introdução**
+A loja de informática necessita de um sistema para otimizar suas operações diárias. O objetivo principal é gerenciar vendas, clientes, produtos e funcionários de forma eficiente, facilitando o dia a dia da loja e fornecendo informações cruciais para a gestão e tomada de decisões.
+
+**2. Contexto da Loja**
+A loja de informática comercializa produtos para uma variedade de clientes, que podem ser tanto pessoas físicas quanto pessoas jurídicas. Atualmente, a gestão desses processos demanda um suporte sistêmico para garantir maior controle, agilidade e precisão nas operações.
+
+**3. Objetivo do Sistema**
+O sistema proposto visa auxiliar a loja no registro e gestão de:
+*   Vendas realizadas.
+*   Clientes (pessoas físicas e jurídicas).
+*   Produtos (com controle de estoque).
+*   Funcionários (gerentes, vendedores e caixas).
+Além disso, o sistema deve apoiar o monitoramento de desempenho da loja e o cálculo de comissões dos vendedores.
+
+**4. Usuários do Sistema e Suas Responsabilidades**
+
+*   **Clientes:** Não interagem diretamente com o sistema, mas suas informações são registradas para fins de venda e relacionamento.
+*   **Vendedores:** Atendem os clientes, auxiliam na escolha de produtos e são elegíveis para comissão sobre suas vendas.
+*   **Caixas:** Responsáveis por registrar as vendas e os pagamentos no sistema.
+*   **Gerente:** Possui responsabilidades de gestão e monitoramento:
+    *   É o único responsável por registrar e gerenciar os funcionários da loja (gerentes, vendedores, caixas).
+    *   Pode consultar as vendas realizadas em períodos específicos.
+    *   Monitora o desempenho da loja em relação às metas estabelecidas.
+    *   Acompanha o cálculo das comissões dos vendedores.
+
+**5. Processos Principais**
+
+**5.1. Processo de Venda**
+1.  **Atendimento:** Clientes visitam a loja e são atendidos por um vendedor, que os auxilia na seleção dos produtos.
+2.  **Registro da Venda:** Após a escolha dos produtos, o cliente se dirige ao caixa, onde o caixa registra a venda no sistema.
+3.  **Registro do Pagamento:** O cliente efetua o pagamento, que é registrado pelo caixa no sistema.
+    *   **Métodos de Pagamento Aceitos:** Débito, Pix e Crédito.
+    *   **Condições de Crédito:** Pagamento em até 5 parcelas, com um valor mínimo de R$ 100 por parcela.
+
+**5.2. Gestão de Funcionários**
+1.  **Registro:** Apenas o gerente da loja tem a permissão para registrar novos funcionários no sistema.
+2.  **Tipos de Funcionários:** Os funcionários podem ser classificados como Gerente, Vendedor ou Caixa.
+
+**5.3. Monitoramento de Vendas e Metas (Funcionalidade do Gerente)**
+1.  **Consulta por Período:** O gerente deve poder selecionar um período específico para consultar as vendas.
+2.  **Visualização de Desempenho:** Para o período selecionado, o sistema deve exibir:
+    *   O valor total das vendas.
+    *   O valor das vendas por dia.
+    *   A meta de vendas esperada para aquele período.
+3.  **Feedback Visual da Meta:**
+    *   Se a meta for atingida ou superada, o valor correspondente deve ser exibido visualmente em azul.
+    *   Se a meta não for atingida, o valor deve ser exibido visualmente em vermelho.
+
+**6. Regras de Negócio**
+
+*   **Comissão de Vendedores:** Os vendedores recebem uma comissão de 10% sobre o valor total das vendas que eles realizaram.
+*   **Imutabilidade da Venda:** Uma vez registrada, uma venda não pode ser alterada nem excluída do sistema.
+*   **Controle de Estoque:** A quantidade de produtos vendidos deve ser automaticamente decrementada do estoque no momento do registro da venda.
+*   **Flexibilidade de Pagamento:** Um único pagamento pode ser associado a mais de uma venda.
+*   **Registro de Funcionários:** Somente o gerente tem permissão para registrar novos funcionários.
+*   **Condição de Parcelamento:** Para pagamentos em crédito, o valor mínimo de cada parcela é de R$ 100.
+
+**7. Benefícios Esperados**
+O sistema proporcionará um controle mais rigoroso sobre as vendas, o estoque e as informações de clientes e funcionários. Ele automatizará processos como o cálculo de comissões e fornecerá ao gerente uma visão clara e em tempo real do desempenho da loja em relação às metas, otimizando a gestão diária e apoiando a tomada de decisões estratégicas.
+
+---
+
+Gerado por RequirementsAI versão 0.8.2
