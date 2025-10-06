@@ -1,9 +1,9 @@
 from bert_score import score
 
-with open("mloja1.txt") as f:
+with open("usecase_candidate.txt") as f:
     cands = [f.read()]
 
-with open("mloja2.txt") as f:
+with open("usecase_reference.txt") as f:
     refs = [f.read()]
 
 (P, R, F), hashname = score(cands, refs, lang="pt", return_hash=True, model_type="bert-base-multilingual-cased")
