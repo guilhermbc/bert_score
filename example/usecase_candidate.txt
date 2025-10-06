@@ -1,0 +1,639 @@
+### UC01 - Gerenciar Funcionário
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR005
+
+**Classes:**
+
+#### E01 - Registrar Funcionário
+
+**Objetivo:**
+Permitir que o Gerente cadastre um novo funcionário no sistema.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de funcionários.
+2.  O sistema exibe a opção para registrar um novo funcionário.
+3.  O **Gerente** seleciona a opção "Registrar Novo Funcionário".
+4.  O sistema exibe um formulário para preenchimento dos dados do funcionário (nome, CPF, salário, data de contratação, dados de contato, credenciais de acesso).
+5.  O **Gerente** preenche os dados obrigatórios do funcionário.
+6.  O **Gerente** confirma o registro.
+7.  O sistema valida os dados inseridos.
+8.  O sistema registra o novo funcionário e suas credenciais de acesso.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de funcionários.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados obrigatórios não forem preenchidos ou forem inválidos, o sistema exibe uma mensagem de erro indicando os campos a serem corrigidos. O fluxo retorna ao passo 5.
+**7b.** - Se o CPF informado já estiver cadastrado para outro funcionário, o sistema exibe uma mensagem de erro informando que o CPF já existe. O fluxo retorna ao passo 5.
+
+#### E02 - Atualizar Dados de Funcionário
+
+**Objetivo:**
+Permitir que o Gerente modifique as informações de um funcionário existente.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de funcionários.
+2.  O sistema exibe uma lista dos funcionários cadastrados.
+3.  O **Gerente** seleciona um funcionário da lista para editar.
+4.  O sistema exibe os dados atuais do funcionário em um formulário editável.
+5.  O **Gerente** realiza as alterações necessárias nos dados do funcionário (ex: salário, dados de contato).
+6.  O **Gerente** confirma as alterações.
+7.  O sistema valida os dados alterados.
+8.  O sistema atualiza as informações do funcionário.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de funcionários.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados alterados forem inválidos (ex: campo obrigatório vazio), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E03 - Visualizar Dados de Funcionário
+
+**Objetivo:**
+Permitir que o Gerente consulte os detalhes de um funcionário.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de funcionários.
+2.  O sistema exibe uma lista dos funcionários cadastrados.
+3.  O **Gerente** seleciona um funcionário da lista para visualizar.
+4.  O sistema exibe os detalhes completos do funcionário em modo somente leitura.
+5.  O **Gerente** pode retornar à lista de funcionários.
+
+---
+
+### UC02 - Alocar Funcionário a Função
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR005, BR001
+
+**Classes:**
+
+#### E01 - Atribuir Função a Funcionário
+
+**Objetivo:**
+Permitir ao Gerente atribuir uma função (Gerente, Vendedor, Caixa) a um funcionário recém-cadastrado ou sem função definida.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de funcionários.
+2.  O sistema exibe uma lista dos funcionários cadastrados.
+3.  O **Gerente** seleciona um funcionário que ainda não possui uma função atribuída ou cuja função precisa ser definida.
+4.  O sistema exibe os detalhes do funcionário e uma opção para "Atribuir Função".
+5.  O **Gerente** seleciona a função desejada (Gerente, Vendedor, Caixa) para o funcionário.
+6.  O **Gerente** confirma a atribuição da função.
+7.  O sistema valida a seleção da função.
+8.  O sistema associa a função ao funcionário.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de funcionários.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se a função selecionada for inválida ou não estiver entre as opções permitidas, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E02 - Modificar Função de Funcionário
+
+**Objetivo:**
+Permitir ao Gerente modificar a função (Gerente, Vendedor, Caixa) de um funcionário existente.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de funcionários.
+2.  O sistema exibe uma lista dos funcionários cadastrados com suas funções atuais.
+3.  O **Gerente** seleciona um funcionário cuja função deseja modificar.
+4.  O sistema exibe os detalhes do funcionário e a função atual, com uma opção para "Modificar Função".
+5.  O **Gerente** seleciona a nova função desejada (Gerente, Vendedor, Caixa) para o funcionário.
+6.  O **Gerente** confirma a modificação da função.
+7.  O sistema valida a nova função selecionada.
+8.  O sistema atualiza a função do funcionário.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de funcionários.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se a nova função selecionada for inválida ou não estiver entre as opções permitidas, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+---
+
+### UC03 - Gerenciar Cliente Pessoa Física
+
+**Atores:** Caixa
+
+**Requisitos Relacionados:** FR002, FR003
+
+**Classes:**
+
+#### E01 - Cadastrar Cliente Pessoa Física
+
+**Objetivo:**
+Permitir que o Caixa cadastre um novo cliente que seja pessoa física no sistema.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe a opção para registrar um novo cliente.
+3.  O **Caixa** seleciona a opção "Registrar Novo Cliente Pessoa Física".
+4.  O sistema exibe um formulário para preenchimento dos dados do cliente pessoa física (nome, CPF, endereço, telefone, e-mail).
+5.  O **Caixa** preenche os dados obrigatórios do cliente.
+6.  O **Caixa** confirma o registro.
+7.  O sistema valida os dados inseridos.
+8.  O sistema registra o novo cliente pessoa física.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de clientes.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados obrigatórios não forem preenchidos ou forem inválidos, o sistema exibe uma mensagem de erro indicando os campos a serem corrigidos. O fluxo retorna ao passo 5.
+**7b.** - Se o CPF informado já estiver cadastrado para outro cliente, o sistema exibe uma mensagem de erro informando que o documento já existe. O fluxo retorna ao passo 5.
+
+#### E02 - Atualizar Dados de Cliente Pessoa Física
+
+**Objetivo:**
+Permitir que o Caixa modifique as informações de um cliente pessoa física existente.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe uma lista dos clientes pessoa física cadastrados.
+3.  O **Caixa** seleciona um cliente da lista para editar.
+4.  O sistema exibe os dados atuais do cliente em um formulário editável.
+5.  O **Caixa** realiza as alterações necessárias nos dados do cliente (ex: endereço, telefone, e-mail).
+6.  O **Caixa** confirma as alterações.
+7.  O sistema valida os dados alterados.
+8.  O sistema atualiza as informações do cliente.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de clientes.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados alterados forem inválidos, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E03 - Visualizar Dados de Cliente Pessoa Física
+
+**Objetivo:**
+Permitir que o Caixa consulte os detalhes de um cliente pessoa física.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe uma lista dos clientes pessoa física cadastrados.
+3.  O **Caixa** seleciona um cliente da lista para visualizar.
+4.  O sistema exibe os detalhes completos do cliente em modo somente leitura.
+5.  O **Caixa** pode retornar à lista de clientes.
+
+---
+
+### UC04 - Gerenciar Cliente Pessoa Jurídica
+
+**Atores:** Caixa
+
+**Requisitos Relacionados:** FR002, FR003
+
+**Classes:**
+
+#### E01 - Cadastrar Cliente Pessoa Jurídica
+
+**Objetivo:**
+Permitir que o Caixa cadastre um novo cliente que seja pessoa jurídica no sistema.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe a opção para registrar um novo cliente.
+3.  O **Caixa** seleciona a opção "Registrar Novo Cliente Pessoa Jurídica".
+4.  O sistema exibe um formulário para preenchimento dos dados do cliente pessoa jurídica (razão social, CNPJ, endereço, telefone, e-mail).
+5.  O **Caixa** preenche os dados obrigatórios do cliente.
+6.  O **Caixa** confirma o registro.
+7.  O sistema valida os dados inseridos.
+8.  O sistema registra o novo cliente pessoa jurídica.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de clientes.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados obrigatórios não forem preenchidos ou forem inválidos, o sistema exibe uma mensagem de erro indicando os campos a serem corrigidos. O fluxo retorna ao passo 5.
+**7b.** - Se o CNPJ informado já estiver cadastrado para outro cliente, o sistema exibe uma mensagem de erro informando que o documento já existe. O fluxo retorna ao passo 5.
+
+#### E02 - Atualizar Dados de Cliente Pessoa Jurídica
+
+**Objetivo:**
+Permitir que o Caixa modifique as informações de um cliente pessoa jurídica existente.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe uma lista dos clientes pessoa jurídica cadastrados.
+3.  O **Caixa** seleciona um cliente da lista para editar.
+4.  O sistema exibe os dados atuais do cliente em um formulário editável.
+5.  O **Caixa** realiza as alterações necessárias nos dados do cliente (ex: endereço, telefone, e-mail).
+6.  O **Caixa** confirma as alterações.
+7.  O sistema valida os dados alterados.
+8.  O sistema atualiza as informações do cliente.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de clientes.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados alterados forem inválidos, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E03 - Visualizar Dados de Cliente Pessoa Jurídica
+
+**Objetivo:**
+Permitir que o Caixa consulte os detalhes de um cliente pessoa jurídica.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de gerenciamento de clientes.
+2.  O sistema exibe uma lista dos clientes pessoa jurídica cadastrados.
+3.  O **Caixa** seleciona um cliente da lista para visualizar.
+4.  O sistema exibe os detalhes completos do cliente em modo somente leitura.
+5.  O **Caixa** pode retornar à lista de clientes.
+
+---
+
+### UC05 - Gerenciar Produto
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR004, BR006
+
+**Classes:**
+
+#### E01 - Cadastrar Produto
+
+**Objetivo:**
+Permitir que o Gerente adicione um novo produto ao catálogo da loja.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de produtos.
+2.  O sistema exibe a opção para cadastrar um novo produto.
+3.  O **Gerente** seleciona a opção "Cadastrar Novo Produto".
+4.  O sistema exibe um formulário para preenchimento dos dados do produto (SKU, descrição, preço de custo, preço de venda, categoria, fornecedor, quantidade inicial em estoque).
+5.  O **Gerente** preenche os dados obrigatórios do produto.
+6.  O **Gerente** confirma o cadastro.
+7.  O sistema valida os dados inseridos.
+8.  O sistema registra o novo produto no catálogo e atualiza o estoque.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de produtos.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados obrigatórios não forem preenchidos ou forem inválidos, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+**7b.** - Se o SKU informado já estiver cadastrado para outro produto, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E02 - Atualizar Dados de Produto
+
+**Objetivo:**
+Permitir que o Gerente modifique as informações de um produto existente no catálogo.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de produtos.
+2.  O sistema exibe uma lista dos produtos cadastrados.
+3.  O **Gerente** seleciona um produto da lista para editar.
+4.  O sistema exibe os dados atuais do produto em um formulário editável.
+5.  O **Gerente** realiza as alterações necessárias (ex: descrição, preço de venda, categoria, fornecedor).
+6.  O **Gerente** confirma as alterações.
+7.  O sistema valida os dados alterados.
+8.  O sistema atualiza as informações do produto.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de produtos.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se os dados alterados forem inválidos, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+#### E03 - Visualizar Detalhes de Produto
+
+**Objetivo:**
+Permitir que o Gerente consulte os detalhes de um produto, incluindo seu estoque atual.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de produtos.
+2.  O sistema exibe uma lista dos produtos cadastrados.
+3.  O **Gerente** seleciona um produto da lista para visualizar.
+4.  O sistema exibe os detalhes completos do produto (SKU, descrição, preço de custo, preço de venda, categoria, fornecedor, quantidade em estoque) em modo somente leitura.
+5.  O **Gerente** pode retornar à lista de produtos.
+
+#### E04 - Registrar Entrada de Estoque
+
+**Objetivo:**
+Permitir que o Gerente registre a entrada de novas unidades de um produto no estoque.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de produtos.
+2.  O sistema exibe uma lista dos produtos cadastrados.
+3.  O **Gerente** seleciona um produto da lista para registrar entrada de estoque.
+4.  O sistema exibe os detalhes do produto e um campo para informar a quantidade a ser adicionada.
+5.  O **Gerente** informa a quantidade de unidades a serem adicionadas ao estoque.
+6.  O **Gerente** confirma a operação.
+7.  O sistema valida a quantidade informada (deve ser um número positivo).
+8.  O sistema atualiza a quantidade em estoque do produto.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de produtos.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se a quantidade informada for inválida (ex: zero ou negativa), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+---
+
+### UC06 - Registrar Venda
+
+**Atores:** Caixa
+
+**Requisitos Relacionados:** FR001, BR005, BR006
+
+**Classes:**
+
+#### E01 - Iniciar Registro de Venda
+
+**Objetivo:**
+Iniciar o processo de registro de uma nova venda.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de registro de vendas.
+2.  O sistema exibe uma tela para iniciar uma nova venda.
+3.  O **Caixa** informa o vendedor responsável pela venda.
+4.  O **Caixa** pode, opcionalmente, associar um cliente à venda (pesquisando por CPF/CNPJ ou nome).
+5.  O sistema inicia uma nova venda, exibindo um carrinho de compras vazio.
+
+##### Fluxos Alternativos/de Exceção
+
+**3a.** - Se o vendedor informado não for encontrado, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 3.
+**4a.** - Se o cliente pesquisado não for encontrado, o sistema exibe uma mensagem e oferece a opção de registrar um novo cliente (via UC03.E01 ou UC04.E01) ou continuar sem cliente associado.
+
+#### E02 - Adicionar Produto à Venda
+
+**Objetivo:**
+Adicionar produtos ao carrinho de compras da venda atual.
+
+##### Fluxo Normal
+
+1.  O **Caixa** pesquisa por um produto (por SKU ou descrição).
+2.  O sistema exibe os produtos que correspondem à pesquisa, com informações de preço e estoque disponível.
+3.  O **Caixa** seleciona o produto desejado e informa a quantidade.
+4.  O sistema verifica a disponibilidade do produto em estoque.
+5.  O sistema adiciona o produto e a quantidade ao carrinho de compras, atualizando o subtotal da venda.
+6.  O **Caixa** pode repetir os passos 1-5 para adicionar mais produtos.
+
+##### Fluxos Alternativos/de Exceção
+
+**2a.** - Se nenhum produto for encontrado, o sistema exibe uma mensagem de "Produto não encontrado". O fluxo retorna ao passo 1.
+**4a.** - Se a quantidade solicitada for maior que o estoque disponível, o sistema exibe uma mensagem de erro informando o estoque atual e impede a adição do produto com aquela quantidade. O fluxo retorna ao passo 3.
+**4b.** - Se o estoque do produto for zero, o sistema exibe uma mensagem de "Produto esgotado" e impede a adição. O fluxo retorna ao passo 1.
+
+#### E03 - Finalizar Registro de Venda
+
+**Objetivo:**
+Concluir o registro da venda, decrementando o estoque e preparando para o pagamento.
+
+##### Fluxo Normal
+
+1.  O **Caixa** revisa os itens no carrinho e o valor total da venda.
+2.  O **Caixa** seleciona a opção "Finalizar Venda".
+3.  O sistema registra a venda com todos os seus detalhes (itens, quantidades, preços, vendedor, cliente - se associado, data/hora).
+4.  O sistema decrementa automaticamente a quantidade de cada produto vendido do estoque.
+5.  O sistema marca a venda como "Registrada" e a disponibiliza para o registro de pagamento.
+6.  O sistema exibe uma mensagem de sucesso e direciona para a tela de registro de pagamento (UC07.E01).
+
+##### Fluxos Alternativos/de Exceção
+
+**1a.** - Se o carrinho estiver vazio, o sistema exibe uma mensagem de erro e impede a finalização da venda. O fluxo retorna ao passo 1 do E02.
+**3a.** - Se houver um problema inesperado no registro da venda (ex: falha no banco de dados), o sistema exibe uma mensagem de erro e a venda não é registrada. O fluxo retorna ao passo 1.
+**4a.** - Se, no momento da finalização, o estoque de algum produto se tornou insuficiente (devido a uma venda concorrente), o sistema exibe uma mensagem de erro, reverte a venda e informa qual produto está com estoque insuficiente. O fluxo retorna ao passo 1 do E02.
+
+---
+
+### UC07 - Registrar Pagamento
+
+**Atores:** Caixa
+
+**Requisitos Relacionados:** FR006, BR002, BR003, BR004, BR008
+
+**Classes:**
+
+#### E01 - Registrar Pagamento de Venda(s)
+
+**Objetivo:**
+Registrar o pagamento de uma ou mais vendas.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de registro de pagamentos ou é direcionado após finalizar uma venda (UC06.E03).
+2.  O sistema exibe as vendas pendentes de pagamento ou a venda recém-finalizada.
+3.  O **Caixa** seleciona a(s) venda(s) que serão pagas. O sistema calcula o valor total a ser pago.
+4.  O **Caixa** informa o método de pagamento (Débito, Pix, Crédito).
+5.  Se o método for "Crédito", o sistema solicita o número de parcelas (até 5x).
+6.  O **Caixa** informa o número de parcelas.
+7.  O sistema valida o número de parcelas e o valor mínimo da parcela (R$ 100,00).
+8.  O **Caixa** confirma o registro do pagamento.
+9.  O sistema registra o pagamento, associando-o à(s) venda(s) selecionada(s), com os detalhes (data/hora, valor, método, parcelas).
+10. O sistema atualiza o status da(s) venda(s) para "Paga".
+11. O sistema exibe uma mensagem de sucesso e retorna à tela principal ou de vendas.
+
+##### Fluxos Alternativos/de Exceção
+
+**3a.** - Se o **Caixa** tentar registrar um pagamento para uma venda já paga, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 2.
+**4a.** - Se o método de pagamento não for um dos aceitos (Débito, Pix, Crédito), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 4.
+**7a.** - Se o número de parcelas for inválido (ex: maior que 5 ou menor que 1), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+**7b.** - Se o valor da parcela for inferior a R$ 100,00, o sistema exibe uma mensagem de erro e impede o parcelamento. O fluxo retorna ao passo 5, sugerindo menos parcelas ou pagamento à vista.
+**8a.** - Se houver um problema inesperado no registro do pagamento, o sistema exibe uma mensagem de erro e o pagamento não é registrado. O fluxo retorna ao passo 3.
+
+---
+
+### UC08 - Cadastrar Meta
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR010
+
+**Classes:**
+
+#### E01 - Definir Meta de Vendas por Período
+
+**Objetivo:**
+Permitir ao Gerente definir e registrar uma nova meta de vendas para um período específico.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de metas de vendas.
+2.  O sistema exibe a opção para "Definir Nova Meta".
+3.  O **Gerente** seleciona a opção "Definir Nova Meta".
+4.  O sistema exibe um formulário para o Gerente informar o período (ex: data de início e fim, ou seleção de mês/ano) e o valor da meta.
+5.  O **Gerente** preenche o período e o valor da meta.
+6.  O **Gerente** confirma a definição da meta.
+7.  O sistema valida os dados inseridos (ex: período válido, valor positivo).
+8.  O sistema registra a nova meta de vendas para o período especificado.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de metas.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se o período informado for inválido (ex: data de início posterior à data de fim) ou o valor da meta for negativo/zero, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+**7b.** - Se já existir uma meta definida para o período selecionado, o sistema exibe uma mensagem de alerta e pergunta se o Gerente deseja atualizar a meta existente (direcionando para E02. Atualizar Meta de Vendas por Período) ou cancelar.
+
+#### E02 - Atualizar Meta de Vendas por Período
+
+**Objetivo:**
+Permitir ao Gerente modificar uma meta de vendas existente para um período específico.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de gerenciamento de metas de vendas.
+2.  O sistema exibe uma lista das metas de vendas cadastradas por período.
+3.  O **Gerente** seleciona a meta que deseja atualizar.
+4.  O sistema exibe os detalhes da meta selecionada em um formulário editável.
+5.  O **Gerente** modifica o valor da meta.
+6.  O **Gerente** confirma a atualização.
+7.  O sistema valida o novo valor da meta (deve ser positivo).
+8.  O sistema atualiza o valor da meta de vendas para o período.
+9.  O sistema exibe uma mensagem de sucesso e retorna à tela de gerenciamento de metas.
+
+##### Fluxos Alternativos/de Exceção
+
+**7a.** - Se o novo valor da meta for inválido (ex: negativo ou zero), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+
+---
+
+### UC09 - Consultar Relatório de Vendas
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR007, FR008, FR009, FR010, FR011, FR012
+
+**Classes:**
+
+#### E01 - Gerar Relatório de Vendas por Período
+
+**Objetivo:**
+Gerar e exibir um relatório de vendas para um período selecionado, com indicadores de meta.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de relatórios de vendas.
+2.  O sistema exibe opções para selecionar um período (ex: dia, semana, mês, personalizado).
+3.  O **Gerente** seleciona o período desejado (ex: "Mês Atual") ou define um intervalo de datas personalizado.
+4.  O sistema consulta as vendas registradas dentro do período selecionado.
+5.  O sistema busca a meta de vendas para o período selecionado (se houver).
+6.  O sistema calcula:
+    *   O valor total vendido por dia dentro do período.
+    *   O valor total vendido no período.
+    *   A meta de vendas esperada para o período (se encontrada).
+7.  O sistema exibe o relatório de vendas com as seguintes informações:
+    *   Valor total vendido por dia (lista).
+    *   Valor total vendido no período.
+    *   Meta de vendas para o período (se disponível).
+    *   Um indicador visual: azul se o total de vendas > meta, vermelho se total de vendas < meta (se meta disponível).
+8.  O **Gerente** pode optar por exportar o relatório ou retornar à tela de seleção de período.
+
+##### Fluxos Alternativos/de Exceção
+
+**3a.** - Se o período personalizado for inválido (ex: data inicial posterior à data final), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 3.
+**5a.** - Se não houver uma meta de vendas cadastrada para o período selecionado, o sistema exibe o relatório sem a meta e sem o indicador visual, ou com um valor de meta padrão (ex: 0).
+**4a.** - Se não houver vendas registradas no período selecionado, o sistema exibe uma mensagem informando "Nenhuma venda encontrada para o período". O fluxo retorna ao passo 2.
+
+---
+
+### UC10 - Consultar Comissão de Vendedores
+
+**Atores:** Gerente
+
+**Requisitos Relacionados:** FR013, BR007
+
+**Classes:**
+
+#### E01 - Consultar Comissões de Vendedores por Período
+
+**Objetivo:**
+Consultar e exibir as comissões devidas a cada vendedor com base em suas vendas para um período selecionado.
+
+##### Fluxo Normal
+
+1.  O **Gerente** acessa a funcionalidade de consulta de comissões.
+2.  O sistema exibe opções para selecionar um período para a consulta das comissões (ex: mês atual, mês anterior, personalizado).
+3.  O **Gerente** seleciona o período desejado.
+4.  O sistema consulta todas as vendas registradas e pagas dentro do período selecionado, agrupando-as por vendedor.
+5.  Para cada vendedor, o sistema calcula:
+    *   O valor total das vendas realizadas pelo vendedor no período.
+    *   A comissão devida (10% do valor total das vendas).
+6.  O sistema exibe uma lista com os seguintes dados para cada vendedor:
+    *   Nome do Vendedor.
+    *   Valor Total de Vendas no Período.
+    *   Valor da Comissão (10% do total de vendas).
+7.  O **Gerente** pode optar por exportar a lista de comissões ou retornar à tela de seleção de período.
+
+##### Fluxos Alternativos/de Exceção
+
+**3a.** - Se o período personalizado for inválido, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 3.
+**4a.** - Se não houver vendas registradas no período selecionado, o sistema exibe uma mensagem informando "Nenhuma venda encontrada para o período" e a lista de comissões estará vazia. O fluxo retorna ao passo 2.
+**5a.** - Se um vendedor não tiver vendas no período, ele não aparecerá na lista ou aparecerá com "Valor Total de Vendas" e "Valor da Comissão" zerados.
+
+---
+
+### UC11 - Processar Devolução de Venda
+
+**Atores:** Caixa
+
+**Requisitos Relacionados:** FR004, FR006 (implícito para estorno), BR005 (não altera venda original)
+
+**Classes:**
+
+#### E01 - Registrar Devolução de Produtos
+
+**Objetivo:**
+Permitir ao Caixa registrar a devolução de produtos de uma venda previamente registrada, ajustando o estoque.
+
+##### Fluxo Normal
+
+1.  O **Caixa** acessa a funcionalidade de processamento de devoluções.
+2.  O sistema solicita ao **Caixa** que informe o ID da venda original ou os dados do cliente/produto para localizar a venda.
+3.  O **Caixa** informa os dados para pesquisa.
+4.  O sistema exibe a venda original e a lista de produtos vendidos.
+5.  O **Caixa** seleciona os produtos a serem devolvidos e informa a quantidade de cada um.
+6.  O sistema valida se a quantidade a ser devolvida não excede a quantidade vendida e se os produtos pertencem à venda.
+7.  O sistema registra a devolução, criando um novo registro de devolução associado à venda original.
+8.  O sistema incrementa automaticamente a quantidade dos produtos devolvidos no estoque.
+9.  O sistema exibe uma mensagem de sucesso e pergunta se um estorno de pagamento é necessário.
+10. Se um estorno for necessário, o sistema direciona para o evento E02. Processar Estorno de Pagamento. Caso contrário, o fluxo termina.
+
+##### Fluxos Alternativos/de Exceção
+
+**4a.** - Se a venda não for encontrada, o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 2.
+**6a.** - Se a quantidade a ser devolvida for inválida (ex: maior que a vendida, negativa ou zero), o sistema exibe uma mensagem de erro. O fluxo retorna ao passo 5.
+**7a.** - Se houver um problema inesperado no registro da devolução ou no ajuste de estoque, o sistema exibe uma mensagem de erro e a devolução não é registrada. O fluxo retorna ao passo 5.
+
+#### E02 - Processar Estorno de Pagamento
+
+**Objetivo:**
+Permitir ao Caixa registrar o estorno de um pagamento associado a uma devolução de produtos.
+
+##### Fluxo Normal
+
+1.  O **Caixa** é direcionado para este evento após registrar uma devolução (UC11.E01) ou acessa diretamente a funcionalidade de estornos.
+2.  O sistema exibe os detalhes da devolução e o valor total a ser estornado.
+3.  O sistema solicita ao **Caixa** que confirme o estorno e o método de estorno (ex: estorno no cartão, devolução em dinheiro/Pix).
+4.  O **Caixa** confirma o estorno.
+5.  O sistema registra o estorno do pagamento, associando-o à devolução.
+6.  O sistema atualiza o status da devolução para "Estornada" (se aplicável).
+7.  O sistema exibe uma mensagem de sucesso e retorna à tela principal.
+
+##### Fluxos Alternativos/de Exceção
+
+**3a.** - Se o valor a ser estornado for zero ou negativo, o sistema exibe uma mensagem de erro e impede o estorno. O fluxo termina.
+**5a.** - Se houver um problema inesperado no registro do estorno, o sistema exibe uma mensagem de erro e o estorno não é registrado. O fluxo retorna ao passo 3.
+
+---
+
+### Questões e Validações
+
+1.  **Detalhes de Cadastro:** Quais informações específicas devem ser registradas para:
+    *   **Produtos:** (ex: SKU, descrição, preço de custo, preço de venda, categoria, fornecedor, etc.)
+    *   **Clientes:** (ex: Endereço, telefone, e-mail, data de nascimento/fundação, CPF/CNPJ, etc.)
+    *   **Funcionários:** (ex: Salário, data de contratação, cargo, etc.)
+    *   **Vendas:** (ex: Vendedor associado, data/hora da venda, lista de itens vendidos com quantidade e preço unitário, etc.)
+    *   **Pagamentos:** (ex: Data/hora do pagamento, valor, método de pagamento, número de parcelas, status, etc.)
+2.  **Autenticação e Autorização:** Todos os usuários (Gerente, Vendedor, Caixa) precisarão fazer login no sistema? Quais permissões específicas cada perfil de usuário terá além das já mencionadas (ex: um vendedor pode visualizar as vendas de outros vendedores? Um caixa pode acessar relatórios de vendas?)
+3.  **Gerenciamento de Estoque - Alertas:** O sistema deve emitir alertas quando o estoque de um produto atingir um nível baixo predefinido?
+4.  **Papel do Vendedor:** O ator "Vendedor" não possui Use Cases diretos de interação com o sistema. Ele precisará de acesso ao sistema para, por exemplo, consultar suas próprias vendas, comissões ou informações de produtos? Ou sua interação é apenas informada pelo Caixa no registro da venda?
+
+---
+
+Gerado por RequirementsAI versão 0.8.2
